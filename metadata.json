@@ -1,0 +1,5 @@
+{
+  "name": "React Portfolio",
+  "description": "A React application showcasing the Balatro background and Split Text component inspired by react.bits.dev, demonstrating advanced animations with Framer Motion and styling with Tailwind CSS.",
+  "requestFramePermissions": []
+}
