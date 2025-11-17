@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import SplitText from './components/SplitText';
 import CustomCursor from './components/CustomCursor';
@@ -5,6 +7,7 @@ import { GitHubIcon, ExternalLinkIcon } from './components/Icons';
 import { motion } from 'framer-motion';
 import Header from './components/Header';
 import BalatroBackground from './components/BalatroBackground';
+import Spacer from './components/Spacer';
 
 const projects = [
   {
@@ -81,8 +84,8 @@ const App: React.FC = () => {
       </div>
       <CustomCursor />
       <Header />
-      <div className="relative z-10 mx-auto max-w-4xl px-4">
-        <section id="hero" className="flex min-h-screen flex-col items-center justify-center text-center">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 pt-24">
+        <section id="hero" className="flex min-h-screen flex-col items-center justify-center text-center scroll-mt-24">
           <SplitText>Hello, I'm Arch</SplitText>
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
@@ -101,6 +104,8 @@ const App: React.FC = () => {
             </a>
           </motion.div>
         </section>
+
+        <Spacer />
 
         <section id="projects" className="py-24 scroll-mt-24">
           <motion.h2 
