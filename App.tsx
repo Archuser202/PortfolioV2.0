@@ -58,7 +58,6 @@ const ProjectCard: React.FC<(typeof projects)[0]> = ({ title, description, tags,
         opacity={0.6}
         blur={4}
         backgroundOpacity={0.05}
-        redOffset={0}
         blueOffset={10}
         greenOffset={20}
       >
