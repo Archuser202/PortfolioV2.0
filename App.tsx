@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import Header from './components/Header';
 
 import Spacer from './components/Spacer';
+import GlassSurface from './components/GlassSurface';
 
 const projects = [
   {
@@ -48,32 +49,47 @@ const ProjectCard: React.FC<(typeof projects)[0]> = ({ title, description, tags,
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5 }}
-      className="group relative flex flex-col rounded-lg border border-zinc-800 bg-zinc-900/50 p-6 transition-colors hover:border-red-500/50"
+      className="h-full"
     >
-      <div className="flex-grow">
-        <h3 className="font-mono text-xl font-bold text-gray-200">{title}</h3>
-        <p className="mt-2 text-gray-400">{description}</p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <span key={tag} className="rounded-full bg-zinc-800 px-3 py-1 text-xs text-red-400">
-              {tag}
-            </span>
-          ))}
+      <GlassSurface
+        width="100%"
+        height="100%"
+        borderRadius={12}
+        opacity={0.6}
+        blur={4}
+        backgroundOpacity={0.05}
+        redOffset={0}
+        blueOffset={10}
+        greenOffset={20}
+      >
+        <div className="flex h-full w-full flex-col justify-between p-4">
+          <div>
+            <h3 className="font-mono text-xl font-bold text-gray-200">{title}</h3>
+            <p className="mt-2 text-gray-400">{description}</p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <span key={tag} className="rounded-full bg-zinc-800/60 px-3 py-1 text-xs text-red-400 ring-1 ring-inset ring-white/10">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="mt-6 flex items-center gap-4">
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`GitHub for ${title}`} className="text-gray-400 hover:text-white transition-colors" data-cursor-hover>
+              <GitHubIcon className="h-6 w-6" />
+            </a>
+            {liveUrl && (
+              <a href={liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`Live demo for ${title}`} className="text-gray-400 hover:text-white transition-colors" data-cursor-hover>
+                <ExternalLinkIcon className="h-6 w-6" />
+              </a>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="mt-6 flex items-center gap-4">
-        <a href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`GitHub for ${title}`} className="text-gray-400 hover:text-white transition-colors" data-cursor-hover>
-          <GitHubIcon className="h-6 w-6" />
-        </a>
-        {liveUrl && (
-          <a href={liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`Live demo for ${title}`} className="text-gray-400 hover:text-white transition-colors" data-cursor-hover>
-            <ExternalLinkIcon className="h-6 w-6" />
-          </a>
-        )}
-      </div>
+      </GlassSurface>
     </motion.div>
   );
 };
+
 
 
 const App: React.FC = () => {
