@@ -71,15 +71,15 @@ const CustomCursor: React.FC = () => {
 
   const cursorVariants = {
     default: {
-      backgroundColor: '#ef444488',
+      backgroundColor: '#145b9aff',
       mixBlendMode: 'difference',
     },
     hover: {
-      backgroundColor: '#ef444444',
+      backgroundColor: '#145b9aff',
       mixBlendMode: 'difference',
     },
     text: {
-      backgroundColor: '#ef4444dd',
+      backgroundColor: '#145b9aff',
       mixBlendMode: 'difference',
     },
   };
