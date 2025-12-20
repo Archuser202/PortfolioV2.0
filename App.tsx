@@ -127,7 +127,7 @@ const App: React.FC = () => {
           <Silk
             speed={3}
             scale={1}
-            color="#ac231c"
+            color="#145b9aff"
             noiseIntensity={1.2}
             rotation={0}
           />
